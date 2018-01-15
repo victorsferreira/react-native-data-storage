@@ -1,4 +1,4 @@
-#DataStorage
+# DataStorage
 
 `react-native-data-storage` is a data storage tool for React Native written on top of AsyncStorage.
 
@@ -6,11 +6,11 @@ With `react-native-data-storage` you can set, get, remove and check for data.
 You can save integers, booleans, strings, primitive objects and arrays (anything that can be represented as in the JSON format).
 The methods always return a promise.
 
-##Installation
+## Installation
 
 npm install react-native-data-storage --save
 
-##Reference
+## Reference
 
 `set(key, value)`: sets a new value to the storage. An object can be passed and it will be merged and overwrite the current key-values.
 
@@ -22,7 +22,7 @@ npm install react-native-data-storage --save
 
 `getAll()`: gets all the values in the storage as an object.
 
-##Usage
+## Usage
 
 ```
 import DataStorage from 'react-native-data-storage';
