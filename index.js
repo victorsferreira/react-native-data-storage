@@ -64,7 +64,7 @@ class _DataStorage{
                 return output;
             }else{
                 if(key in data) return data[key];
-                else throw new Error(`Key ${key} not found`);
+                else throw new Error(`Key '${key}' not found`);
             }
         });
     }
@@ -90,7 +90,7 @@ class _DataStorage{
                 }
             }else{
                  if(key in data) delete data[key];
-                 else throw new Error(`Key ${key} not found`);
+                 else throw new Error(`Key '${key}' not found`);
             }
 
             return this.setAll(data);
