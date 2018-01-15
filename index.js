@@ -57,9 +57,8 @@ class _DataStorage{
         .then((data)=>{
             if(Array.isArray(key)){
                 var output = {};
-                for(var k in key){
-                     if(k in data) output[k] = data[k];
-                     else  throw new Error(`Key ${k} not found`);
+                for(var k of key){
+                    if(k in data) output[k] = data[k]; //  else simply don't add the key
                 }
 
                 return output;
@@ -73,14 +72,27 @@ class _DataStorage{
     has(key){
         return this.getAll()
         .then((data)=>{
-            return key in data;
+            if(Array.isArray(key)){
+                var output = {};
+                for(var k of key) output[k] = k in data;
+                return output;
+            }else return key in data;
         });
     }
 
     remove(key){
         return this.getAll()
         .then((data)=>{
-            delete data[key];
+            if(Array.isArray(key)){
+                var output = {};
+                for(var k of key){
+                    if(k in data) delete data[k];
+                }
+            }else{
+                 if(key in data) delete data[key];
+                 else throw new Error(`Key ${key} not found`);
+            }
+
             return this.setAll(data);
         });
     }

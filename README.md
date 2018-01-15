@@ -12,10 +12,14 @@ npm install react-native-data-storage --save
 
 ##Reference
 
-`set(key, value)`: sets a new value to the storage.
-`get(key)`: gets a value in the storage. Promise is rejected if key is not found. An array of keys can be passed and an object with the values will be returned.
-`has(key)`: checks whether a value has been set to the storage. Promise resolves with `true` of `false`.
-`remove(key)`: removes a value from the storage.
+`set(key, value)`: sets a new value to the storage. An object can be passed and it will be merged and overwrite the current key-values.
+
+`get(key)`: gets a value in the storage. Promise is rejected if key is not found. An array of keys can be passed and an object with the same keys provided and their values will be returned.
+
+`has(key)`: checks whether a value has been set to the storage. Promise resolves with `true` of `false`. An array of keys can be passed and an object with the same keys provided will be returned.
+
+`remove(key)`: removes a value from the storage. An array of keys can be passed.
+
 `getAll()`: gets all the values in the storage as an object.
 
 ##Usage
